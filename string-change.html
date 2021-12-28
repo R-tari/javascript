@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>성 : <input type="text"></label>
+    <br>
+    <label>이름 : <input type="text"></label>
+    <br>
+    <label>전화번호 : <input type="text"></label>
+    <br>
+    <label>전자우편 : <input type="text"></label>
+    <script>
+        let _input=document.getElementsByTagName('input');
+        
+        let userName=prompt('여권이름(영문)을 입력해주세요.');
+        let userPhoneNumner=prompt('전화번호를 넣어주세요');
+        let userEmail=prompt('E-mail을 입력해주세요');
+        
+        let serName=userName.substring(0,userName.indexOf(' '));
+        let tmp='';
+        
+        for(let cnt=0;cnt<serName.length;cnt++)
+        {
+            if(serName.charCodeAt(cnt)>=97&&serName.charCodeAt(cnt)<=122)
+            {
+                let ascCode=serName.charCodeAt(cnt);
+                tmp+=String.fromCharCode(ascCode-32);
+            }
+            else 
+             tmp=tmp+serName.charAt(cnt);
+        }
+        serName=tmp;
+
+        
+        let name=userName.substring(userName.indexOf(' ')+1,userName.length-1);
+
+        _input[0].value=serName;
+        _input[1].value=name;
+
+        let startIndex=userPhoneNumner.length-4;
+        let _subString= userPhoneNumner.substr(startIndex,4);
+        _input[2].value=userPhoneNumner.replace(_subString,'****');
+
+        if(userEmail.indexOf('@')>=7&&userEmail.indexOf('.')>userEmail.indexOf('@'))
+            _input[3].value=userEmail;
+                
+        else
+            userEmail=prompt('E-mail을 입력해주세요');
+       
+
+
+    </script>
+</body>
+</html>
