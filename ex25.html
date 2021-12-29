@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장개체</title>
+</head>
+<body>
+    
+    <script>
+        let arr=new Array();
+        console.log(typeof arr);
+        arr[0]=10
+        arr[1]='대한민국'
+        arr[2]= true;
+        let text=new String();
+        console.log(typeof text);
+        text[0]='k';
+        text[1]='o';
+        text[2]='r';
+        
+        let date=new Date();
+        console.log(typeof date);
+        console.log(date);
+
+        let toYear = date.getFullYear();
+        console.log(toYear);
+        document.write('올해년도는 '+toYear+ '년도 입니다.'+'<br>');
+        let toMonth = date.getMonth()+1;
+        console.log(toMonth);
+        document.write('이번달은 '+toMonth+ '월 입니다.'+'<br>');
+        let todate = date.getDate();
+        console.log(todate);
+        document.write('오늘은 '+todate+ '일 입니다.'+'<br>');
+        let today = date.getDay();
+        console.log(todate);
+        document.write('오늘은 '+today+ '요일 입니다.'+'<br>');
+
+        let to
+        
+
+
+    </script>
+</body>
+</html>

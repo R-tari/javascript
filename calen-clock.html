@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shizuru&display=swap');
+        .wrap
+        {
+            /* width:600px; */
+            
+            height:100vh;
+
+            background-image:radial-gradient(#ac7fc0,#2cc0ca);
+            /* border:1px solid #000; */
+            display:flex;
+            flex-flow:column nowrap;
+            justify-content: center;
+            align-items:center;
+            color:#fff;
+            text-shadow:0 0 10px #fff;
+            font-family:'Nanum-Gothic';
+        }
+        .time
+        {
+            font-weight:700;
+            font-size:100px;
+            /* color:red; */
+            order:2;
+
+        }
+        .date
+        {
+            font-weight:500;
+            font-size:30px;
+            /* color:darkblue; */
+            order:1;
+        }
+        .wrap::after
+        {
+            content:'DIGITAL CLOCK Desighn By cho';
+            display:block;
+            order:3;
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+
+        <section class="sec time" id="time"></section>
+        <section class="sec date" id="date"></section>
+        
+    </section>
+
+    <script>
+        setInterval(function(){
+            let date=new Date();//오늘 날짜,시간
+            let toHour=date.getHours();
+            if(toHour.toString().length ==1)
+            {
+                toHour='0'+toHour;
+            }
+            let toMinte=date.getMinutes();
+            if(toMinte.toString().length ==1)
+            {
+                toMinte='0'+toMinte;
+            }
+            let toSecond=date.getSeconds();
+            if(toSecond.toString().length ==1)
+            {
+                toSecond='0'+toSecond;
+            }
+            let _time=document.getElementById('time');
+            _time.innerHTML = toHour + ':' + toMinte + ':' + toSecond ;
+
+        },1000);
+            
+
+        setInterval(function(){
+            let date=new Date();
+            let toYear=date.getFullYear();
+            let toMonth=date.getMonth()+1;
+            let toDate=date.getDate();
+            let toDay=date.getDay();
+            //숫자요일>문자요일
+            switch(toDay)
+            {
+                case 0:
+                    toDay='Sun';
+                    break;
+                case 1:
+                    toDay='Mon';
+                    break;
+                case 2:
+                    toDay='Tue';
+                    break;
+                case 3:
+                    toDay='Wed';
+                    break;
+                case 4:
+                    toDay='Thu';
+                    break;
+                case 5:
+                    toDay='Fri';
+                    break;
+                case 6:
+                    toDay='Sat';
+                    break;
+            }
+
+            let _date=document.getElementById('date');
+            _date.innerHTML=toYear+'-'+ toMonth +'-'+ toDate + ' '+ toDay;
+            
+        },86400000)
+
+        let date=new Date();
+        let toYear=date.getFullYear();
+        let toMonth=date.getMonth()+1;
+        if(toMonth.toString().length ==1)
+            {
+                toMonth='0'+toMonth;
+            }
+        let toDate=date.getDate();
+        if(toDate.toString().length ==1)
+            {
+                toDate='0'+toDate;
+            }
+        let toDay=date.getDay();
+        
+        
+        //숫자요일>문자요일
+        switch(toDay)
+        {
+            case 0:
+                    toDay='Sun';
+                    break;
+                case 1:
+                    toDay='Mon';
+                    break;
+                case 2:
+                    toDay='Tue';
+                    break;
+                case 3:
+                    toDay='Wed';
+                    break;
+                case 4:
+                    toDay='Thu';
+                    break;
+                case 5:
+                    toDay='Fri';
+                    break;
+                case 6:
+                    toDay='Sat';
+                    break;
+        }
+
+        let _date=document.getElementById('date');
+        _date.innerHTML=toYear+'-' + toMonth +'-'+ toDate + ' ' + toDay;
+
+    </script>
+</body>
+</html>
