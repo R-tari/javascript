@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Light</title>
+    <style>
+        body.dark
+        {
+            background-color: #000;
+        }
+        h1.dark,h2.dark
+        {
+            color:#fff;
+        }
+        p.dark, a.dark
+        {
+            color:lightblue;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>
+        web
+    </h1>
+    <ul>
+        <li><a href="#">wab</a></li>
+        <li><a href="#">html</a></li>
+        <li><a href="#">css</a></li>
+        <li><a href="#">javascript</a></li>
+    </ul>
+    <hr>
+    
+
+    <h2>
+        web
+    </h2>
+
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae quas reprehenderit quia corrupti voluptas vel ex omnis impedit labore! Eaque, officiis distinctio dicta commodi fugiat perferendis voluptate ut consequuntur repellat.
+        Deserunt reiciendis sed architecto. Praesentium unde iste reprehenderit quod, dicta voluptatem mollitia maiores vero? Delectus perspiciatis earum amet quas aperiam explicabo illum est expedita aut? Explicabo magnam voluptatum autem rem.
+        Sint laudantium aliquam odit ut rem, numquam excepturi quas molestias illum earum eius officia nihil, placeat nemo beatae nobis aliquid itaque dolores minus deleniti dolorem ipsa assumenda. Sequi, ipsam dolorum.
+        Recusandae, saepe debitis dolores molestias architecto laudantium porro natus nihil unde sapiente doloribus dolorem nobis. Corporis non ipsum, illo tenetur est rem excepturi. Saepe vero laboriosam, adipisci facere excepturi tenetur?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo error tempora quam? Iure laborum ipsum alias numquam, quidem repudiandae dolorum nihil minus sapiente dolor nesciunt iste doloribus. Ipsa, corporis.
+        Fuga vel doloremque aspernatur laborum hic laboriosam nihil, reiciendis molestias quod impedit numquam neque totam, blanditiis sequi officia ratione excepturi ex voluptate a. Sint placeat dignissimos pariatur eius, libero quia.
+        Cumque molestiae officiis voluptatem sed aliquam, veniam molestias rerum cum architecto perferendis aliquid? Tempore iste molestiae aliquid debitis quis provident ut possimus voluptatem velit, cumque rem delectus eligendi quasi. Maiores.
+        Ratione quod laborum quaerat? Vel corrupti mollitia commodi laboriosam, porro aut quisquam, obcaecati modi in eveniet, odit repudiandae fuga fugiat consequuntur facilis consequatur nobis aperiam iusto. Molestiae ipsa temporibus optio!
+        Voluptatem, nisi cumque cupiditate ab quasi nihil enim repellendus, eius asperiores aspernatur sed iste? Nihil velit quisquam laboriosam recusandae repudiandae aliquid a! Recusandae corrupti voluptatibus quibusdam pariatur aperiam! Fuga, ullam!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, quis deserunt quisquam dolor rerum rem iusto nobis, expedita consequuntur architecto accusantium at amet dignissimos beatae! Omnis reprehenderit a sed voluptate!
+        Quam laudantium dolore pariatur quis earum numquam repudiandae quas fuga itaque, asperiores fugit facilis, magnam quod commodi alias, porro quia corporis obcaecati laboriosam accusamus perferendis a blanditiis. Eaque, accusantium reprehenderit.
+        Illo hic soluta omnis necessitatibus dolores sunt veritatis fuga excepturi natus deleniti. Rem nesciunt reprehenderit quos quidem inventore error illo a quo, quisquam architecto distinctio, molestias est exercitationem quae magnam.
+    </p>
+
+    <button id="dark" class="dark">다크모드</button>
+    <button id="light" class="light">라이트모드</button>
+
+    <script>
+        let btnDark=document.getElementById('dark');
+        let btnLight=document.getElementById('light');
+
+        let _body=document.body;
+        let _h1 =document.querySelector('h1');
+        let _aNode =document.getElementsByTagName('a');
+        let _h2 =document.querySelector('h2');
+        let _pNode =document.getElementsByTagName('p');
+
+        btnDark.onclick=function()
+        {
+            _body.classList.add('dark');
+            _h1.classList.add('dark');
+            _h2.classList.add('dark');
+            
+
+            for(let idx=0;idx<_aNode.length;idx++)
+                _aNode[idx].classList.add('dark');
+            
+            for(let idx=0;idx<_aNode.length;idx++)
+                _pNode[idx].classList.add('dark');
+            
+            // _body.style.backgroundColor='#000';
+            // _h1.style.color='#fff';
+
+            // for(let idx=0;idx<_aNode.length;idx++)
+            // _aNode[idx].style.color='lightblue';
+
+            // _h2.style.color='#fff';
+
+            // for(let idx=0;idx<_aNode.length;idx++)
+            //     _pNode[idx].style.color='lightblue';
+        }
+
+        btnLight.addEventListener('click',function()
+        {
+
+            _body.classList.remove('dark');
+            _h1.classList.remove('dark');
+            _h2.classList.remove('dark');
+            
+
+            for(let idx=0;idx<_aNode.length;idx++)
+                _aNode[idx].classList.remove('dark');
+                
+
+            for(let idx=0;idx<_aNode.length;idx++)
+                _pNode[idx].classList.remove('dark');
+            // _body.style.backgroundColor='#fff';
+            // _h1.style.color='#000';
+
+            // for(let idx=0;idx<_aNode.length;idx++)
+            // _aNode[idx].style.color='blue';
+
+            // _h2.style.color='#000';
+
+            // for(let idx=0;idx<_aNode.length;idx++)
+            // _pNode[idx].style.color='black';
+        })
+
+
+    </script>
+
+
+</body>
+</html>
